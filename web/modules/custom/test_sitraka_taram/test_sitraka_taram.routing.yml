@@ -1,0 +1,7 @@
+test_sitraka_taram.dashboard:
+  path: '/admin/test-sitraka-taram/dashboard'
+  defaults:
+    _controller: '\Drupal\test_sitraka_taram\Controller\DashboardController::dashboard'
+    _title: 'Dashboard Test Sitraka Taram'
+  requirements:
+    _permission: 'access content'

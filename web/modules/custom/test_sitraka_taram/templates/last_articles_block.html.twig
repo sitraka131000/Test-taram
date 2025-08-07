@@ -1,0 +1,15 @@
+<div class="last-articles-block">
+  <h2>{{ 'Derniers articles'|t }}</h2>
+  <ul>
+    {% for node in articles %}
+      <li>
+        <a href="{{ path('entity.node.canonical', {'node': node.id()}) }}">
+          {{ node.getTitle() }}
+        </a>
+        <span class="seo-score">SEO: {{ node.field_score_seo.value ?: 'N/A' }}</span>
+      </li>
+    {% else %}
+      <li>{{ 'Aucun article trouvé.'|t }}</li>
+    {% endfor %}
+  </ul>
+</div>

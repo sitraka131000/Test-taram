@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+
+/**
+ * Ajoute le champ field_score_seo aux articles avec configuration de l'affichage du formulaire.
+ */
+function test_sitraka_taram_update_9002() {
+  // 1. Création du stockage du champ (définit le type, etc.)
+  if (!FieldStorageConfig::loadByName('node', 'field_score_seo')) {
+    FieldStorageConfig::create([
+      'field_name' => 'field_score_seo',
+      'entity_type' => 'node',
+      'type' => 'decimal',
+      'settings' => [
+        'precision' => 10,
+        'scale' => 2,
+      ],
+      'cardinality' => 1,
+      'translatable' => TRUE,
+    ])->save();
+  }
+
+  // 2. Création du champ sur le bundle 'article'
+  if (!FieldConfig::loadByName('node', 'article', 'field_score_seo')) {
+    FieldConfig::create([
+      'field_name' => 'field_score_seo',
+      'entity_type' => 'node',
+      'bundle' => 'article',
+      'label' => 'Score SEO',
+      'description' => 'Score SEO sur 100',
+      'required' => FALSE,
+      'translatable' => TRUE,
+      'settings' => [],
+    ])->save();
+  }
+
+  // 3. Configuration de l'affichage du champ dans le formulaire d'édition
+  $entity_form_display = EntityFormDisplay::load('node.article.default');
+  if (!$entity_form_display) {
+    $entity_form_display = EntityFormDisplay::create([
+      'targetEntityType' => 'node',
+      'bundle' => 'article',
+      'mode' => 'default',
+      'status' => TRUE,
+    ]);
+  }
+
+  $entity_form_display->setComponent('field_score_seo', [
+    'type' => 'number',
+    'weight' => 5,
+    'settings' => [
+      'placeholder' => 'Score SEO sur 100',
+    ],
+  ]);
+  $entity_form_display->save();
+
+  // 4. Optionnel : vider le cache de configuration pour être sûr que tout est pris en compte
+  \Drupal::service('cache.discovery')->deleteAll();
+}
+
