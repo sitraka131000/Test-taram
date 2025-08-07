@@ -22,6 +22,18 @@ Mettre le site en mode maintenance :
 utilisation du module Upgrade Status pour checker les modules incompatibles
 Mettre à jour tous les modules vers leurs dernières versions compatibles D9 (aussi les modules custom)
 
+PLAN de Rollback : 
+Faire du backup d'abord => vendor/bin/drush sql-dump > drupal9_backup.sql
+tar -czf site-files-backup.tar.gz web/sites/default/files
+git checkout -b migration-d10
+git add .
+git commit -m "Backup commit before Drupal 10 migration"
+En cas d'echec, remettre la base 
+vendor/bin/drush sql-drop -y   # Supprime l’actuelle base 
+vendor/bin/drush sql:dump < drupal9_backup.sql
+
+
+
 Corriger les dépréciations signalées dans les logs
 Migration vers Drupal 10 (étape intermédiaire)
 Mise à jour des dépendances avec Composer
