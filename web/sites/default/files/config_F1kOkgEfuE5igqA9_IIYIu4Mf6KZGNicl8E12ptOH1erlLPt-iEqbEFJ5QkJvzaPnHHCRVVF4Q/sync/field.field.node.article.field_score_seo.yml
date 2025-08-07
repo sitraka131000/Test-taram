@@ -1,0 +1,23 @@
+uuid: a6b91115-836e-4593-b7cd-d050f549796d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_score_seo
+    - node.type.article
+id: node.article.field_score_seo
+field_name: field_score_seo
+entity_type: node
+bundle: article
+label: 'Score SEO'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

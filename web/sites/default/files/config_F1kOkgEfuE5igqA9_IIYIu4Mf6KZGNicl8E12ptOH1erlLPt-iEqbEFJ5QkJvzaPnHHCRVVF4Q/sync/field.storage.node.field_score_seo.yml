@@ -1,0 +1,20 @@
+uuid: b991975e-a739-47ed-bdaa-54a2a97ed3c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_score_seo
+field_name: field_score_seo
+entity_type: node
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

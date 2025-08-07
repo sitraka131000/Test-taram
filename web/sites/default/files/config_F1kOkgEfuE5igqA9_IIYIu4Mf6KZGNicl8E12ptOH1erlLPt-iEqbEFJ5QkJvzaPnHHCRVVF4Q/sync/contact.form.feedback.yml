@@ -1,0 +1,14 @@
+uuid: 2db7db0a-8f10-47f5-91d0-67f7e57b11b2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - sitraka-test@gmail.com
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''
