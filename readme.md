@@ -99,12 +99,12 @@ $ vendor/bin/drush  devel-generate-content --bundles=article 20 (generer 20 arti
 
 
 
-PROCESS DU MIGRATION : 
+## PROCESS DU MIGRATION 
 
 desactiver upgrade_status. => vendor/bin/drush pmu upgrade_status
 Mise à jour complete => /c/wamp64/bin/php/composer.phar update drupal/* --with-all-dependencies
 
-MIGRATION VERS D10
+## MIGRATION VERS D10
 /c/wamp64/bin/php/composer.phar  require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --update-with-dependencies
 
 $ vendor/bin/drush updb  => update de la base de donnée
@@ -117,7 +117,7 @@ Mettre à jours drush => composer require drush/drush:^13 --update-with-dependen
 
 Corriger le module deprecié en d11 : ex => Tour
 
-MIGRATION VERS D11
+## MIGRATION VERS D11
 
 composer require 'drupal/core-recommended:^11' \
                  'drupal/core-composer-scaffold:^11' \
@@ -128,6 +128,8 @@ composer update --dry-run
 composer update  --with-dependencies
 
 vendor/bin/drush updb
+
+Migration vers drupal 11.2.2 OK
 
 
 
