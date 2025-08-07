@@ -1,0 +1,5 @@
+services:
+  test_sitraka_taram.commands:
+    class: Drupal\test_sitraka_taram\Command\TestSitrakaTaramCommands
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Code principal du module test_sitraka_taram.
+ */
+
+/**
+ * Implémentation de hook_cron().
+ * Purge le cache à chaque exécution du cron.
+ */
+function test_sitraka_taram_cron() {
+  \Drupal::logger('test_sitraka_taram')->notice('Purge du cache via cron.');
+  drupal_flush_all_caches();
+}

@@ -1,0 +1,6 @@
+test_sitraka_taram.dashboard:
+  title: 'Dashboard Test Sitraka Taram'
+  description: 'Tableau de bord personnalisé'
+  parent: system.admin_content
+  route_name: test_sitraka_taram.dashboard
+  weight: 100
