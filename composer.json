@@ -26,7 +26,8 @@
         "drupal/migrate_tools": "^6.1",
         "drupal/migrate_upgrade": "^4.0",
         "drupal/twig_tweak": "^3.3",
-        "drupal/upgrade_status": "^4.3"
+        "drupal/upgrade_status": "^4.3",
+        "drush/drush": "^13"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -109,6 +109,17 @@ MIGRATION VERS D10
 
 $ vendor/bin/drush updb  => update de la base de donnée
 
+Utiliser php 8.3
+
+Reactiver upgrade_status POUR PREPARER LA MIGRATION VERS DRUPAL 11
+
+Mettre à jours drush => composer require drush/drush:^13 --update-with-dependencies
+
+Corriger le module deprecié en d11 : ex => Tour
+
+MIGRATION VERS D11
+
+
 
 
 
