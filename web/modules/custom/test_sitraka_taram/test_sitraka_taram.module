@@ -13,3 +13,15 @@ function test_sitraka_taram_cron() {
   \Drupal::logger('test_sitraka_taram')->notice('Purge du cache via cron.');
   drupal_flush_all_caches();
 }
+/**
+ * Implements hook_theme().
+ */
+function test_sitraka_taram_theme($existing, $type, $theme, $path) {
+  return [
+    'last_articles_block' => [
+      'variables' => ['articles' => NULL],
+      'template' => 'last-articles-block',
+      'path' => drupal_get_path('module', 'test_sitraka_taram') . '/templates',
+    ],
+  ];
+}

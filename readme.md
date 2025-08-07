@@ -61,6 +61,11 @@ composer require drupal/devel
 - Module Node activé
 - Champ personnalisé `field_score_seo` sur le type de contenu "article" (se trouve dans test_sitraka_taram.install)
 
+
+Liste des 5 derniers articles :   ici -> /last-articles
+Fait dans web\modules\custom\test_sitraka_taram\src\Plugin\Block\LastArticlesBlock.php
+fichier twig : web\modules\custom\test_sitraka_taram\templates\last-articles-block.html.twig
+
 ## Installation
 1. Copier `test_sitraka_taram` dans `modules/custom/`
 2. Activer le module :
@@ -75,10 +80,9 @@ vendor/bin/drush en devel_generate -y
 $ vendor/bin/drush  devel-generate-content --bundles=article 20 (generer 20 articles)
 
 
-- Dashboard `/admin/test-sitraka-taram/dashboard` listant 5 derniers articles 
+- Dashboard `/admin/test-sitraka-taram/dashboard`
 - Commande Drush `drush test_sitraka_taram:backup` pour purger cache + backup DB (c'est fait ici :
  web\modules\custom\test_sitraka_taram\src\Command\TestSitrakaTaramCommands.php)
 - Purge automatique du cache via `hook_cron`
 
-## Données de test
-Fichier `content/node.article.yml` avec 3 articles d'exemple.
+
