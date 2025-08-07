@@ -98,3 +98,18 @@ $ vendor/bin/drush  devel-generate-content --bundles=article 20 (generer 20 arti
 - Purge automatique du cache via `hook_cron`
 
 
+
+PROCESS DU MIGRATION : 
+
+desactiver upgrade_status. => vendor/bin/drush pmu upgrade_status
+Mise à jour complete => /c/wamp64/bin/php/composer.phar update drupal/* --with-all-dependencies
+
+MIGRATION VERS D10
+/c/wamp64/bin/php/composer.phar  require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --update-with-dependencies
+
+$ vendor/bin/drush updb  => update de la base de donnée
+
+
+
+
+

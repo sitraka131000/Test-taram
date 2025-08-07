@@ -56,3 +56,16 @@ web/sites/default/files/js
 web/sites/default/files/php
 web/sites/default/files/css
 web/sites/default/files/styles
+
+web/.htaccess
+web/INSTALL.txt
+web/example.gitignore
+web/modules/README.txt
+web/profiles/README.txt
+web/robots.txt
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/development.services.yml
+web/sites/example.settings.local.php
+web/sites/example.sites.php
+web/themes/README.txt

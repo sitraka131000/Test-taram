@@ -1,4 +1,6 @@
 <?php
+use Drupal\Core\Extension\ThemeHandlerInterface;
+use Drupal\Core\Extension\ExtensionPathResolverInterface;
 
 /**
  * @file
@@ -16,12 +18,20 @@ function test_sitraka_taram_cron() {
 /**
  * Implements hook_theme().
  */
+
+/**
+ * Implémentation de hook_theme().
+ */
 function test_sitraka_taram_theme($existing, $type, $theme, $path) {
+  $moduleHandler = \Drupal::service('extension.path.resolver');
+  $template_path = $moduleHandler->getPath('module', 'test_sitraka_taram') . '/templates';
+
   return [
     'last_articles_block' => [
       'variables' => ['articles' => NULL],
       'template' => 'last-articles-block',
-      'path' => drupal_get_path('module', 'test_sitraka_taram') . '/templates',
+      'path' => $template_path,
     ],
   ];
 }
+
