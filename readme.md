@@ -119,7 +119,15 @@ Corriger le module deprecié en d11 : ex => Tour
 
 MIGRATION VERS D11
 
+composer require 'drupal/core-recommended:^11' \
+                 'drupal/core-composer-scaffold:^11' \
+                 'drupal/core-project-message:^11' --no-update
 
+composer remove drupal/core --no-update
+composer update --dry-run
+composer update  --with-dependencies
+
+vendor/bin/drush updb
 
 
 
