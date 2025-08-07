@@ -29,8 +29,6 @@ sites/*/files/.htaccess
 *.swp
 *.orig
 
-*.sql
-*.sqlite
 
 .idea/
 .vscode/
